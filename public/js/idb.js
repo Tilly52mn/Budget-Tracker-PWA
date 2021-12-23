@@ -1,6 +1,13 @@
 // create variable to hold db connection
+console.log('idb.js')
 let db;
 // establish a connection to IndexedDB database called 'budget' and set it to version 1
+const indexedDB =
+  window.indexedDB ||
+  window.mozIndexedDB ||
+  window.webkitIndexedDB ||
+  window.msIndexedDB ||
+  window.shimIndexedDB;
 const request = indexedDB.open('budget', 1);
 
 // this event will emit if the database version changes (nonexistant to version 1, v1 to v2, etc.)
